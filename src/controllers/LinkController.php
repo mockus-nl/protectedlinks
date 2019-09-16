@@ -162,7 +162,7 @@ class LinkController extends Controller
             throw new BadRequestHttpException(Craft::t('app', 'The Asset you’re trying to download does not exist.'));
         }
 
-        $this->_requirePermissionByAsset('viewVolume', $asset);
+        //$this->_requirePermissionByAsset('viewVolume', $asset);
         
         //update downloads counter
         Craft::$app->getDb()->createCommand()->update('{{%protectedlinks_links}}', ['downloads'=>$link['downloads']+1], ['id'=>$link['id']])->execute();
